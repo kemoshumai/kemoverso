@@ -11,6 +11,8 @@
     <script src="../dist/kemoverso.js"></script>
     <script>
         const canvasElement = document.querySelector('canvas');
+        canvasElement.width = 640;
+        canvasElement.height = 480;
         const kemoverso = new Kemoverso();
         kemoverso.establishWithCanvas(canvasElement);
     </script>
