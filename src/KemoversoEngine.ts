@@ -2,7 +2,7 @@ import * as BABYLON from "babylonjs";
 
 export default class KemoversoEngine
 {
-    private babylonEngine: BABYLON.Engine;
+    public babylonEngine: BABYLON.Engine;
     private canvasElement: HTMLCanvasElement;
     private scene?: BABYLON.Scene;
     
@@ -11,9 +11,9 @@ export default class KemoversoEngine
         this.canvasElement = canvasElement;
     }
 
-    public async createScene(): Promise<void>{
+    public async createScene(worldscene?:BABYLON.Scene): Promise<void>{
         // Scene
-        const scene:BABYLON.Scene = new BABYLON.Scene(this.babylonEngine);
+        const scene:BABYLON.Scene = worldscene ?? new BABYLON.Scene(this.babylonEngine);
 
         // Camera
         const camera = new BABYLON.FreeCamera("KMCamera", new BABYLON.Vector3(0,5,-10), scene);
