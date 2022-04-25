@@ -2,6 +2,22 @@
 # yarn lockfile v1
 
 
+"@babylonjs/core@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/core/-/core-5.3.0.tgz#1a83829cb85add3d9c59c4b38f825834c7acc0ab"
+  integrity sha512-MSvYdnsSbrZmmh2lJUQx/DMpxjXpj8EkbT/jeKYoK+LlFVjxy5LZZDEh6GIe8PFysui6i/6X40EDhJ+C0qfRng==
+  dependencies:
+    tslib "^2.3.1"
+
+"@babylonjs/loaders@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@babylonjs/loaders/-/loaders-5.3.0.tgz#19da1c9e9aa199b95b14da0b1a85b865a23721ac"
+  integrity sha512-nz+NuY0AO0BS9oPv/p2H7mvClcr5dyj+4dujXVWH/BrZD7f9hc/iGsfR27jfvVyDo1GMfu8/3sqN+a1PuGjlwQ==
+  dependencies:
+    "@babylonjs/core" "^5.3.0"
+    babylonjs-gltf2interface "^5.3.0"
+    tslib "^2.3.1"
+
 "@discoveryjs/json-ext@^0.5.0":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
@@ -389,6 +405,11 @@ async@^2.6.2:
   integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
   dependencies:
     lodash "^4.17.14"
+
+babylonjs-gltf2interface@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/babylonjs-gltf2interface/-/babylonjs-gltf2interface-5.3.0.tgz#a83a417ebfa1a93aabee610a1e5fc01703ee87f2"
+  integrity sha512-XUVUVw7iFJG84hM6+PFa6gPKevG4T4OT4h2mfw+y3rDUHhmTsan41dlczUIMAkwF636oipPQOEzatLCYHKs5bw==
 
 babylonjs@^5.2.0:
   version "5.2.0"
@@ -1853,6 +1874,11 @@ ts-loader@^9.2.8:
     enhanced-resolve "^5.0.0"
     micromatch "^4.0.0"
     semver "^7.3.4"
+
+tslib@^2.3.1:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
 type-is@~1.6.18:
   version "1.6.18"
