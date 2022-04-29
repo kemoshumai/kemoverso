@@ -1,5 +1,5 @@
 import * as BABYLON from "babylonjs";
-import "@babylonjs/loaders/glTF";
+import 'babylonjs-loaders';
 import KemoversoEngine from "./KemoversoEngine";
 
 export default class Kemoverso

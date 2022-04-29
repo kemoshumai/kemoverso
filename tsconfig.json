@@ -5,5 +5,10 @@
         "module": "ES2015",
         "strict": true,
         "moduleResolution": "node",
+        "types": [
+            "babylonjs",
+            "babylonjs-loaders",
+            "node"
+        ],
     }
 }
