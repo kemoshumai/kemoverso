@@ -9,12 +9,16 @@
 <body>
     <canvas></canvas>
     <script src="../dist/kemoverso.js"></script>
+    <script src="./scene.js"></script>
     <script>
         const canvasElement = document.querySelector('canvas');
         canvasElement.width = 640;
         canvasElement.height = 480;
-        const kemoverso = new Kemoverso();
-        kemoverso.establishWithCanvasFromFile(canvasElement, "./scenes/SampleScene.gltf");
+        const main = async () => {
+            const kemoverso = new Kemoverso(canvasElement);
+            await kemoverso.establish(kemoverso.makeUserScene(sceneMaker));
+        }
+        main();
     </script>
 </body>
 </html>

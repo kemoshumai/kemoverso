@@ -4,23 +4,28 @@ import KemoversoEngine from "./KemoversoEngine";
 
 export default class Kemoverso
 {
-    public async establishWithCanvasFromFile(canvasElement:HTMLElement, sceneFilepath: string)
+    private kemoversoEngine:KemoversoEngine;
+
+    constructor(canvasElement:HTMLCanvasElement){
+        const kemoversoEngine:KemoversoEngine = new KemoversoEngine(new BABYLON.Engine(canvasElement,true),canvasElement);
+        this.kemoversoEngine = kemoversoEngine;
+    }
+
+    public async loadSceneFile(sceneFilepath: string)
     {
         const sceneFolderpath:string = sceneFilepath.split("/").reverse().slice(1).reverse().join("/")+"/" ?? "";
         const sceneFilename:string = sceneFilepath.split('/')?.pop()?.split('\\')?.pop() ?? "";
         console.log("Loading...:",sceneFolderpath,sceneFilename);
         const scene:BABYLON.Scene = await BABYLON.SceneLoader.LoadAsync(sceneFolderpath,sceneFilename);
-        this.establish(canvasElement as HTMLCanvasElement, scene);
+        return scene;
     }
-    public establishWithCanvas(canvasElement:HTMLElement, scene: BABYLON.Scene)
+    public async establish(scene:BABYLON.Scene)
     {
-        this.establish(canvasElement as HTMLCanvasElement, scene);
+        await this.kemoversoEngine.createScene(scene);
+        this.kemoversoEngine.render();
     }
-    public async establish(canvasElement:HTMLCanvasElement, scene: BABYLON.Scene): Promise<void>
-    {
-        
-        const kemoversoEngine:KemoversoEngine = new KemoversoEngine(new BABYLON.Engine(canvasElement,true),canvasElement);
-        await kemoversoEngine.createScene(scene);
-        kemoversoEngine.render();
+    public makeUserScene(sceneMaker:(s:BABYLON.Scene)=>BABYLON.Scene){
+        const scene:BABYLON.Scene = new BABYLON.Scene(this.kemoversoEngine.babylonEngine);
+        return sceneMaker(scene);
     }
 }
